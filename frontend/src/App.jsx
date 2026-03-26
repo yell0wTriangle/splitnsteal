@@ -18,7 +18,7 @@ export default function App() {
   } = useGame();
 
   if (state.phase === "start") {
-    return <StartPage onStart={startGame} pending={state.pending} />;
+    return <StartPage onStart={startGame} pending={state.pending} error={state.error} />;
   }
 
   if (state.phase === "powerup") {

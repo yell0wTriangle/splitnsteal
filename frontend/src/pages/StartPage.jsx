@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const StartPage = ({ onStart, pending }) => {
+const StartPage = ({ onStart, pending, error }) => {
   const [playerName, setPlayerName] = useState("");
   const [rounds, setRounds] = useState("5");
   const [pot, setPot] = useState("100000");
@@ -403,6 +403,11 @@ const StartPage = ({ onStart, pending }) => {
               </div>
             </button>
           </div>
+          {error ? (
+            <div className="mt-2 border-2 border-[#9e342a] bg-black/50 px-4 py-3 mono text-xs font-black uppercase tracking-wide text-[#ff7a6f]">
+              {error}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
