@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: split-steal-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: FRONTEND_ORIGIN
+        value: https://YOUR-FRONTEND.vercel.app
+      - key: ALLOW_VERCEL_PREVIEW_ORIGINS
+        value: false
+      - key: SESSION_TTL_MINUTES
+        value: 60
+      - key: GEMINI_MODEL
+        value: gemini-3.1-flash-lite-preview
+      - key: GEMINI_TIMEOUT_MS
+        value: 15000
+      - key: GEMINI_API_KEY
+        sync: false
